@@ -12,6 +12,8 @@ public class Employee extends DomainObject {
     @JsonIgnore
     private Employee manager;
 
+    private Long managerID;
+
     private List<Employee> subordinates = new ArrayList<>();
 
     public String getFirstName() {
@@ -36,5 +38,13 @@ public class Employee extends DomainObject {
 
     public void setSubordinates(List<Employee> subordinates) {
         this.subordinates = subordinates;
+    }
+
+    public Long getManagerID() {
+        return managerID;
+    }
+
+    public void setManagerID(Long managerID) {
+        this.managerID = managerID;
     }
 }

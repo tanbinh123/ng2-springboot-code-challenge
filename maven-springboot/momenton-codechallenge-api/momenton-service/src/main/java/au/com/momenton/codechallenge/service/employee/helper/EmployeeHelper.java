@@ -21,6 +21,7 @@ public class EmployeeHelper {
                 subordinate.setId(currSubordinate.getId());
                 subordinate.setFirstName(currSubordinate.getFirstName());
                 subordinate.setManager(localManager);
+                subordinate.setManagerID(localManager.getId());
                 Employee populatedSubordinate = this.populateSubordinates(subordinate, employeeDao);
                 localManager.getSubordinates().add(populatedSubordinate);
             }

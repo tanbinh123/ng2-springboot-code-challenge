@@ -41,6 +41,7 @@ public class EmployeeServiceImpl extends BaseServiceImpl implements EmployeeServ
                 Employee independent = new Employee();
                 independent.setId(currIndependent.getId());
                 independent.setFirstName(currIndependent.getFirstName());
+                independent.setManagerID(-1L);
                 Employee populatedIndependent =
                         this.employeeHelper.populateSubordinates(independent, employeeDao);
                 employeeHierarchies.add(populatedIndependent);
