@@ -1,11 +1,10 @@
-## Node + Angular 2 with 1 server
+## Node + Angular 2 Front End Setup
 
 ## Run the project
-- `npm i` or `yarn`
+- `npm -ddd install`
 - `gulp`
-- command prompt 1 type `tsc` to compile Typescript files
-- command prompt 2 type `nodemon server.js` or `node server.js`
+- `npm start`
 
 ### Navigate to port 8000
 
-- includes socket.io setup
+- `http://localhost:8000`
