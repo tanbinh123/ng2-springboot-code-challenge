@@ -9,10 +9,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var employee_service_1 = require('../service/employee.service');
 var HomeComponent = (function () {
-    function HomeComponent() {
+    function HomeComponent(employeeService) {
+        this.employeeService = employeeService;
     }
     HomeComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.employeeService.getEmployeeTree()
+            .subscribe(function (data) {
+            _this.employeeTree = data;
+        }, function (error) {
+            console.log(error);
+        });
     };
     HomeComponent = __decorate([
         core_1.Component({
@@ -21,7 +30,7 @@ var HomeComponent = (function () {
             styleUrls: ['home.styles.css'],
             templateUrl: 'home.template.html'
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [employee_service_1.EmployeeService])
     ], HomeComponent);
     return HomeComponent;
 }());

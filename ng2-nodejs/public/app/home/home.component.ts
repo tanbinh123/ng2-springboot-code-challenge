@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { EmployeeService } from '../service/employee.service';
+import { Employee } from '../model/employee.model';
 
 @Component({
     moduleId: module.id,
@@ -8,10 +10,18 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class HomeComponent implements OnInit {
-  constructor() {
-  }
 
-  public ngOnInit() {
+    private employeeTree: Employee[];
 
-  }
+    constructor(private employeeService: EmployeeService) {
+    }
+
+    public ngOnInit() {
+        this.employeeService.getEmployeeTree()
+            .subscribe((data: Employee[]) => {
+                this.employeeTree = data;
+            }, error => {
+                console.log(error);
+            });
+    }
 }

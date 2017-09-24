@@ -4,13 +4,16 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-import { Http, XHRBackend, RequestOptions } from '@angular/http';
+import { Http, XHRBackend, RequestOptions, HttpModule } from '@angular/http';
 import { CustomHttp } from './integration/custom-http.service';
+import { ApiUtil } from './integration/api.util';
+import { EmployeeService } from './service/employee.service';
 
 @NgModule({
   imports: [
       BrowserModule,
-      FormsModule
+      FormsModule,
+      HttpModule
   ],
   declarations: [
       AppComponent,
@@ -32,7 +35,9 @@ import { CustomHttp } from './integration/custom-http.service';
               );
           },
           deps: [XHRBackend, RequestOptions]
-      }
+      },
+      ApiUtil,
+      EmployeeService
   ]
 })
 export class AppModule { }

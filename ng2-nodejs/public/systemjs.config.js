@@ -13,6 +13,7 @@
       defaultExtension: 'js'
     },
     'rxjs': {
+      main: 'Rx.js',
       defaultExtension: 'js'
     },
   };
@@ -26,17 +27,17 @@
     'platform-browser',
     'platform-browser-dynamic',
     'router',
-    'upgrade',
+    'upgrade'
   ];
 
   // Individual files (~300 requests):
   function packIndex(pkgName) {
-    packages['@angular/'+pkgName] = { main: 'index.js', defaultExtension: 'js' };
+    packages['@angular/' + pkgName] = { main: 'index.js', defaultExtension: 'js' };
   }
 
   // Bundled (~40 requests):
   function packUmd(pkgName) {
-    packages['@angular/'+pkgName] = { main: '/bundles/' + pkgName + '.umd.js', defaultExtension: 'js' };
+    packages['@angular/' + pkgName] = { main: '/bundles/' + pkgName + '.umd.js', defaultExtension: 'js' };
   }
 
   // Most environments should use UMD; some (Karma) need the individual index files

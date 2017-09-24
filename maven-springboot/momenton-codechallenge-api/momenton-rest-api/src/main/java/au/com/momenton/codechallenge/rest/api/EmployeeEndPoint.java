@@ -14,6 +14,7 @@ import java.util.List;
 /**
  * Created by WPerera on 9/23/2017.
  */
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping(value = "/codechallenge/employees")
 public class EmployeeEndPoint {
