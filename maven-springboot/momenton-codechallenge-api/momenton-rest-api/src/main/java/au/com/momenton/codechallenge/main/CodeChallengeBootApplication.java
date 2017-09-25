@@ -68,6 +68,7 @@ public class CodeChallengeBootApplication extends SpringBootServletInitializer {
             public void customize(Jackson2ObjectMapperBuilder jacksonObjectMapperBuilder) {
                 jacksonObjectMapperBuilder.deserializerByType(String.class, new JsonDeserializer<String>() {
                     @Override
+                    @CoverageIgnore
                     public String deserialize(JsonParser jsonParser, DeserializationContext deserializationContext)
                             throws IOException, JsonProcessingException {
                         JsonNode node = jsonParser.readValueAsTree();

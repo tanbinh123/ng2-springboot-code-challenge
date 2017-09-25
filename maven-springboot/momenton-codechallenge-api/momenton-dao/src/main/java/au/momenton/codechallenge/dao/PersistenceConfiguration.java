@@ -1,5 +1,6 @@
 package au.momenton.codechallenge.dao;
 
+import au.momenton.codechallenge.common.utils.CoverageIgnore;
 import org.skife.jdbi.v2.DBI;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -16,6 +17,7 @@ public class PersistenceConfiguration {
     @Autowired
     private DataSource dataSource;
 
+    @CoverageIgnore
     @Bean
     public DBI dbiBean() {
         DBI dbi = new DBI(dataSource);

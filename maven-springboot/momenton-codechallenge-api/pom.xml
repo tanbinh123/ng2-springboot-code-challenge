@@ -75,12 +75,12 @@
                         <ignoreTrivial>true</ignoreTrivial>
                         <ignoreMethodAnnotation>au.momenton.codechallenge.common.utils.CoverageIgnore</ignoreMethodAnnotation>
                         <excludes>
-                            <exclude>au/momenton/codechallenge/db/migration/Main.class</exclude>
+                            <exclude>au/momenton/codechallenge/db/scripts/Main.class</exclude>
                             <exclude>au/com/momenton/codechallenge/main/CodeChallengeBootApplication.class</exclude>
                         </excludes>
                     </instrumentation>
                     <check>
-                        <haltOnFailure>false</haltOnFailure>
+                        <haltOnFailure>true</haltOnFailure>
                         <branchRate>80</branchRate>
                         <lineRate>80</lineRate>
                         <packageLineRate>80</packageLineRate>

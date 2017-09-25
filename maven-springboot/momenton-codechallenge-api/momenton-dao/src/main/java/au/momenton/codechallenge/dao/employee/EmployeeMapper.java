@@ -1,5 +1,6 @@
 package au.momenton.codechallenge.dao.employee;
 
+import au.momenton.codechallenge.common.utils.CoverageIgnore;
 import au.momenton.codechallenge.db.entity.Employee;
 import org.skife.jdbi.v2.StatementContext;
 import org.skife.jdbi.v2.tweak.ResultSetMapper;
@@ -12,6 +13,7 @@ import java.sql.SQLException;
  */
 public class EmployeeMapper implements ResultSetMapper<Employee>
 {
+    @CoverageIgnore
     public Employee map(int index, ResultSet r, StatementContext ctx) throws SQLException {
         return new Employee(
                 r.getLong("ID"),
