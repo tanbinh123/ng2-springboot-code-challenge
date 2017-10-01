@@ -55,7 +55,8 @@ public class EmployeeEndPointTest {
         when(employeeService.getEmployeeHierarchy()).thenReturn(expectedEmployees);
 
         // Act
-        mockMvc.perform(get("/codechallenge/employees/list/hierarchy").contentType(MediaType.APPLICATION_JSON))
+        mockMvc.perform(get("/codechallenge/employees/list/hierarchy")
+                .contentType(MediaType.APPLICATION_JSON))
                 .andDo(print())
                 .andExpect(status().isOk()) // Assert
                 .andExpect(jsonPath("$[0].firstName", is(employeeName)));
