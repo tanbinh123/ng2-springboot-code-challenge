@@ -24,13 +24,13 @@ public class DataMigrator {
         Resource resource = flywayContext.getResource("classpath:scripts.properties");
         p.load(resource.getInputStream());
         PropertyConfigurator.configure(p);
-
-        // Flyway execution
         flyway.setLocations(p.getProperty("flyway.location"));
         log.debug("setting flyway location : " + p.getProperty("flyway.location"));
 
+        // Flyway data migration
         flyway.setOutOfOrder(true);
         flyway.setValidateOnMigrate(true);
         flyway.migrate();
+
     }
 }
