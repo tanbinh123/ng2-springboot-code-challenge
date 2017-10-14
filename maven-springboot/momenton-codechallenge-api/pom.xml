@@ -8,9 +8,9 @@
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>1.4.1.RELEASE</version>
     </parent>
-    <name>momenton-codechallenge-api</name>
-    <groupId>au.momenton.codechallenge</groupId>
-    <artifactId>momenton-codechallenge-api</artifactId>
+    <name>xcompany-codechallenge-backend-api</name>
+    <groupId>au.com.xcompany.codechallenge</groupId>
+    <artifactId>xcompany-codechallenge-backend-api</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <properties>
@@ -33,13 +33,13 @@
         <org.springframework.security.version>4.0.1.RELEASE</org.springframework.security.version>
     </properties>
     <modules>
-        <module>momenton-dao</module>
-        <module>momenton-rest-api</module>
-        <module>momenton-domain</module>
-        <module>momenton-service</module>
-        <module>momenton-codechallenge-db-migration</module>
-        <module>momenton-codechallenge-db-entity</module>
-        <module>momenton-codechallenge-common-utils</module>
+        <module>xcompany-codechallenge-dao</module>
+        <module>xcompany-codechallenge-rest-api</module>
+        <module>xcompany-codechallenge-domain</module>
+        <module>xcompany-codechallenge-service</module>
+        <module>xcompany-codechallenge-db-migration</module>
+        <module>xcompany-codechallenge-db-entity</module>
+        <module>xcompany-codechallenge-common-utils</module>
     </modules>
     <build>
         <resources>
@@ -52,7 +52,7 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
                 <configuration>
-                    <warName>momenton</warName>
+                    <warName>xcompany</warName>
                 </configuration>
             </plugin>
             <plugin>
@@ -73,10 +73,10 @@
                             <ignore>org.slf4j.*</ignore>
                         </ignores>
                         <ignoreTrivial>true</ignoreTrivial>
-                        <ignoreMethodAnnotation>au.momenton.codechallenge.common.utils.CoverageIgnore</ignoreMethodAnnotation>
+                        <ignoreMethodAnnotation>au.com.xcompany.codechallenge.common.utils.CoverageIgnore</ignoreMethodAnnotation>
                         <excludes>
-                            <exclude>au/momenton/codechallenge/db/scripts/Main.class</exclude>
-                            <exclude>au/com/momenton/codechallenge/main/CodeChallengeBootApplication.class</exclude>
+                            <exclude>au/com/xcompany/codechallenge/db/scripts/DataMigrator.class</exclude>
+                            <exclude>au/com/xcompany/codechallenge/main/CodeChallengeBootApplication.class</exclude>
                         </excludes>
                     </instrumentation>
                     <check>
