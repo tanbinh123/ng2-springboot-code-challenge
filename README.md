@@ -12,7 +12,7 @@ Build an employee tree with ng2, nodejs, springboot, jdbi, h2 and flyway.
 - tsc (can be installed with npm)
 
 ### Running the Backend
-- Refer to instructions at `maven-springboot/momenton-codechallenge-api/README.md`
+- Refer to instructions at `maven-springboot/xcompany-codechallenge-api/README.md`
 
 ### Running the FrontEnd
 - Refer to instructions at `ng2-nodejs/README.md`
